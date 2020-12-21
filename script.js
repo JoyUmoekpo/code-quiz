@@ -39,6 +39,7 @@ function startQuiz() {
         noTime--;
         document.getElementById("starter").innerHTML = noTime;
         if (noTime <= 0) {
+            clearInterval(timer);
             quizOver();
         }
     }, 1000);
