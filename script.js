@@ -32,12 +32,12 @@ var noTime = 0;
 var timer;
 
 function startQuiz() {
-    noTime = 75;
-    document.getElementById("noTime").innerHTML = noTime;
+    noTime = 100;
+    document.getElementById("starter").innerHTML = noTime;
 
     timer = setInterval(function() {
         noTime--;
-        document.getElementById("noTime").innerHTML = noTime;
+        document.getElementById("starter").innerHTML = noTime;
         if (noTime = 0) {
             quizOver();
         }
