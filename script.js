@@ -38,7 +38,7 @@ function startQuiz() {
     timer = setInterval(function() {
         noTime--;
         document.getElementById("starter").innerHTML = noTime;
-        if (noTime = 0) {
+        if (noTime <= 0) {
             quizOver();
         }
     }, 1000);
