@@ -25,3 +25,21 @@ var quiz_questions = [
         answer: "console.log"
     }
 ];
+
+
+var startScore = 0;
+var noTime = 0;
+var timer;
+
+function startQuiz() {
+    noTime = 75;
+    document.getElementById("noTime").innerHTML = noTime;
+
+    timer = setInterval(function() {
+        noTime--;
+        document.getElementById("noTime").innerHTML = noTime;
+        if (noTime = 0) {
+            quizOver();
+        }
+    }, 1000);
+}
