@@ -67,18 +67,3 @@ function startQuiz() {
     }, 1000);
     showQuestion();
 }
-
-const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');
-
-function showQuestion() {
-    const output = [];
-    quiz_questions.forEach(
-        ()
-    )
-}
-function showResults() {}
-showQuestions();
-
-submitButton.addEventListener('click', showResults);
