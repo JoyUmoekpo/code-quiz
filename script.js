@@ -67,7 +67,7 @@ function showQuestion() {
     choiceC = my_questions[cur].choiceC;
     choiceD = my_questions[cur].choiceD;
 
-    quiz.innerHTML = "<h3>" + question + "</h3>";
+    quiz.innerHTML =  question + "</br>";
 
     quiz.innerHTML += "<label> <input type='radio' name='choices' value='A'> " + choiceA + "</label><br>";
     quiz.innerHTML += "<label> <input type='radio' name='choices' value='B'> " + choiceB + "</label><br>";
@@ -80,14 +80,15 @@ function checkAnswer() {
     choices = document.getElementsByName("choices");
     for (var i = 0; i < choices.length; i++) {
         if (choices[i].checked) {
-            choices = choices[i].value;
+            choice = choices[i].value;
         }
     }
 
-    if (choices == my_questions[cur].answer) {
+    if (choice == my_questions[cur].answer) {
         correct++;
     }
     cur++;
     showQuestion();
 }
+
 window.addEventListener("load", showQuestion);
