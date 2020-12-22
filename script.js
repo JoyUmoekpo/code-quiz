@@ -57,7 +57,6 @@ var my_questions = [
 ];
 
 var cur = 0;
-var correct = 0;
 
 function get(x) {
     return document.getElementById(x);
@@ -80,10 +79,10 @@ function Question() {
 
     quiz.innerHTML =  question + "</br>";
 
-    quiz.innerHTML += "<label> <input value='1' name='choices' type='radio' required> " + choiceA + "</label><br>";
-    quiz.innerHTML += "<label> <input value='2' name='choices' type='radio' required> " + choiceB + "</label><br>";
-    quiz.innerHTML += "<label> <input value='3' name='choices' type='radio' required> " + choiceC + "</label><br>";
-    quiz.innerHTML += "<label> <input value='4' name='choices' type='radio' required> " + choiceD + "</label><br><br>";
+    quiz.innerHTML += "<label> <input name='choices' type='radio' required> " + choiceA + "</label><br>";
+    quiz.innerHTML += "<label> <input name='choices' type='radio' required> " + choiceB + "</label><br>";
+    quiz.innerHTML += "<label> <input name='choices' type='radio' required> " + choiceC + "</label><br>";
+    quiz.innerHTML += "<label> <input name='choices' type='radio' required> " + choiceD + "</label><br><br>";
     quiz.innerHTML += "<button onclick='review()'>Submit Answer</button><br>";
 }
 
