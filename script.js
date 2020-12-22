@@ -80,10 +80,10 @@ function Question() {
 
     quiz.innerHTML =  question + "</br>";
 
-    quiz.innerHTML += "<label> <input value='A' name='choices' type='radio' required> " + choiceA + "</label><br>";
-    quiz.innerHTML += "<label> <input value='B' name='choices' type='radio' required> " + choiceB + "</label><br>";
-    quiz.innerHTML += "<label> <input value='C' name='choices' type='radio' required> " + choiceC + "</label><br>";
-    quiz.innerHTML += "<label> <input value='D' name='choices' type='radio' required> " + choiceD + "</label><br><br>";
+    quiz.innerHTML += "<label> <input value='1' name='choices' type='radio' required> " + choiceA + "</label><br>";
+    quiz.innerHTML += "<label> <input value='2' name='choices' type='radio' required> " + choiceB + "</label><br>";
+    quiz.innerHTML += "<label> <input value='3' name='choices' type='radio' required> " + choiceC + "</label><br>";
+    quiz.innerHTML += "<label> <input value='4' name='choices' type='radio' required> " + choiceD + "</label><br><br>";
     quiz.innerHTML += "<button onclick='review()'>Submit Answer</button><br>";
 }
 
