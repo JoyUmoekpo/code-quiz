@@ -66,4 +66,8 @@ function startQuiz() {
         }
     }, 1000);
     showQuestion();
-}
+};
+
+var cur = 0;
+var correct = 0;
+var quiz, current, question, choices, choiceA, choiceB, choiceC, choiceD;
