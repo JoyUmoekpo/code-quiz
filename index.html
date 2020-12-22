@@ -3,22 +3,24 @@
 
 <head>
     <script type="text/javascript" src="./script.js"></script>
-    <link type= "text/css" ref="stylesheet" href="./style.css" />
+    <link type="text/css" ref="stylesheet" href="./style.css" />
     <title>Coding Quiz</title>
 </head>
 
 <body>
-    <container>
+    <div id="quiz">
         <div class="firstPage">
             <h1>Hello! This is a timed coding quiz. In this quiz, you will be asked five multiple choices questions
                 concerning coding. You will have 100 seconds to answer questions. If you get a question correct, you
                 will
                 receive 10
                 points. If you answer a question incorrectly, you will lose ten points.</h1>
+            <div id="starter">
+                <button onclick="startQuiz()">Start Quiz</button>
+            </div>
+            <button id="submit">Submit</button>
+            <div id="results"></div>
         </div>
-    </container>
-    <div id="starter">
-        <button onclick="startQuiz()">Start Quiz</button>
     </div>
 </body>
 

@@ -1,37 +1,59 @@
 var quiz_questions = [
     {
-        question: "Commonly used data types DO NOT include:",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "strings"
+        question: "What HTML element do we use for JavaScript?",
+        options: {
+            A: "<style>", 
+            B: "<javascript>", 
+            C: "<css>", 
+            D: "<coffeescript>"
+        },
+        answer: "<javascript>"
     },
     {
-        question: "The condition in an if/else statement is enclosed within____",
-        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        answer: "parentheses"
+        question: "Which is commonly prefered, an internal or external stylesheet?",
+        options: {
+            A: "an internal stylesheet", 
+            B: "an external stylesheet", 
+            C: "neither is preferred", 
+            D: "Why does it matter?"},
+        answer: "an external stylesheet"
     },
     {
-        question: "Arrays in JavaScript can be used to store ____.",
-        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-        answer: "all of the above"
+        question: "How would we display an alert?",
+        options: {
+            A:"prompt("")", 
+            B: "confirm("")", 
+            C: "text("")", 
+            D: "alert("")"},
+        answer: "alert("")"
     },
     {
-        question: "String values must be enclosed within __________ when being assigned to variables.",
-        choices: ["commas", "quotes", "stylesheet", "boolean"],
-        answer: "quotes"
+        question: "Should we try to use semantic HTML whenever we can?",
+        options: {
+            A: "Yes", 
+            B: "No", 
+            C: "Not sure", 
+            D: "Why bother?"},
+        answer: "Yes"
     },
-    {
-        question: "A very useful tool used during development and debugging for printing content to the debugger is: ____.",
-        choices: ["JavaScript", "terminal/bash", "for loops", "console.log"],
-        answer: "console.log"
+    {        
+        question: "What should you do when you are frustrated with your code?",
+        choices: {
+            A: "Smash your computer", 
+            B: "Take a deep breath or take a break", 
+            C: "Give up", 
+            D: "Ask your friend to finish your code for you"},
+        answer: "Take a deep breath or take a break"         
     }
 ];
 
 
 var startScore = 0;
 var noTime = 0;
+var currentQuestion = 0;
 var timer;
 
-function startQuiz() {
+function startQuiz() {    
     noTime = 100;
     document.getElementById("starter").innerHTML = noTime;
 
@@ -43,4 +65,20 @@ function startQuiz() {
             quizOver();
         }
     }, 1000);
+    showQuestion();
 }
+
+const quizContainer = document.getElementById('quiz');
+const resultsContainer = document.getElementById('results');
+const submitButton = document.getElementById('submit');
+
+function showQuestion() {
+    const output = [];
+    quiz_questions.forEach(
+        ()
+    )
+}
+function showResults() {}
+showQuestions();
+
+submitButton.addEventListener('click', showResults);
