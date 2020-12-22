@@ -1,6 +1,18 @@
-var cur = 0;
-var correct = 0;
-var quiz, current, question, choices, choiceA, choiceB, choiceC, choiceD;
+function startQuiz() {    
+    noTime = 100;
+    document.getElementById("starter").innerHTML = noTime;
+
+    time = setInterval(function() {
+        noTime--;
+        document.getElementById("starter").innerHTML = noTime;
+        if (noTime <= 0) {
+            clearInterval(time);
+            quizOver();
+        }
+    }, 1000);
+    showQuestion();
+};
+
 var my_questions = [
     {
         question: "What HTML element do we use for JavaScript?",
@@ -41,54 +53,50 @@ var my_questions = [
         choiceC: "Give up",
         choiceD: "Ask your friend to finish your code for you",
         answer: "Take a deep breath or take a break"
-    }
+    },
 ];
 
+var cur = 0;
+var correct = 0;
 
 function get(x) {
     return document.getElementById(x);
 }
 
-function showQuestion() {
+function Question() {
     quiz = get("quiz");
     if (cur >= my_questions.length) {
-        quiz.innerHTML = "<h2>You got " + correct + " of " + my_questions.length + " questions correct</h2>";
-        get("quiz_status").innerHTML = "Quiz completed";
-        cur = 0;
-        correct = 0;
+        quiz.innerHTML =  question + "</br>";
+        quiz.innerHTML = "<h2>You are done!</h2>";
         return false;
     }
-
-    get("quiz_status").innerHTML = "Question " + (cur + 1) + " of " + my_questions.length;
 
     question = my_questions[cur].question;
     choiceA = my_questions[cur].choiceA;
     choiceB = my_questions[cur].choiceB;
     choiceC = my_questions[cur].choiceC;
     choiceD = my_questions[cur].choiceD;
+    answer = my_questions[cur].answer;
 
     quiz.innerHTML =  question + "</br>";
 
-    quiz.innerHTML += "<label> <input type='radio' name='choices' value='A'> " + choiceA + "</label><br>";
-    quiz.innerHTML += "<label> <input type='radio' name='choices' value='B'> " + choiceB + "</label><br>";
-    quiz.innerHTML += "<label> <input type='radio' name='choices' value='C'> " + choiceC + "</label><br>";
-    quiz.innerHTML += "<label> <input type='radio' name='choices' value='D'> " + choiceD + "</label><br><br>";
-    quiz.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button><br>";
+    quiz.innerHTML += "<label> <input value='A' name='choices' type='radio' required> " + choiceA + "</label><br>";
+    quiz.innerHTML += "<label> <input value='B' name='choices' type='radio' required> " + choiceB + "</label><br>";
+    quiz.innerHTML += "<label> <input value='C' name='choices' type='radio' required> " + choiceC + "</label><br>";
+    quiz.innerHTML += "<label> <input value='D' name='choices' type='radio' required> " + choiceD + "</label><br><br>";
+    quiz.innerHTML += "<button onclick='review()'>Submit Answer</button><br>";
 }
 
-function checkAnswer() {
-    choices = document.getElementsByName("choices");
-    for (var i = 0; i < choices.length; i++) {
-        if (choices[i].checked) {
-            choice = choices[i].value;
+function review() {
+    options = document.getElementsByName("choices");
+    for (var i = 0; i < options.length; i++) {
+        if (options[i]) {;
         }
     }
 
-    if (choice == my_questions[cur].answer) {
-        correct++;
-    }
+ 
     cur++;
-    showQuestion();
+    Question();
 }
 
-window.addEventListener("load", showQuestion);
+window.addEventListener("load", Question);
